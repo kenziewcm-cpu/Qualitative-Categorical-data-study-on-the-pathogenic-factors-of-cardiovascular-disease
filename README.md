@@ -1,10 +1,13 @@
 1 Abstract
+
 Cardiovascular disease (CVD) is the leading cause of death worldwide, and early detection and management are crucial for individuals with CVD or at high risk. Therefore, researching the pathogenic factors of CVD is of great significance. To explore the pathogenic factors of cardiovascular disease, this code analyzed 1190 samples from four locations: Hungary, Switzerland, Cleveland, and Long Beach, Virginia. The analysis included various characteristics such as basic information, physiological indicators, symptoms, and test results. This code primarily uses a logit model for modeling, employing forward regression and lasso contraction estimation by comparing the AIC and BIC criteria to screen variables. Furthermore, adjusting thresholds improved the recall rate, contributing to the efficient screening of potential cardiovascular disease patients.
 
 2 Missing Value Handling
+
 Due to some screening subjects being unable to answer certain questions, the missing value rate in this dataset is relatively high, reaching 18.74%. Of the 918 samples, 172 samples were missing one variable (Cholesterol); one sample was missing two variables (Cholesterol and RestingBP); the remaining samples had complete data. To reduce model error, preserve as much information as possible, and simplify the missing value imputation process, this paper uses median imputation to fill in the 172 samples with a single missing value and removes the sample missing two variables.
 
 3 Dependent Variable Handling
+
 Due to the specific nature of disease diagnosis, we need to carefully consider each screening subject who may have cardiovascular disease. This sample contains 507 positive samples (with cardiovascular disease), accounting for 55.3%, and 410 negative samples (without cervical cancer), accounting for 44.7%, indicating a relatively balanced sample category ratio.
 
 4 Model Selection
@@ -18,7 +21,9 @@ To further compare the performance of the three models, this study also reports 
 For clarity, the results corresponding to “Table 2: Model evaluation metrics” are described in text:
 
 Full model:
+
 AUC = 0.930
+
 Average residual sum of squares = 17.0211
 Average test error = 0.1086
 Number of variables = 16
